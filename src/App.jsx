@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Navbar onNavClick={(section) => scroller.scrollTo(section, {
-          duration: 800,
+          duration: 900,
           smooth: "easeInOutQuad",
           offset: -70,
          // Adjust based on your navbar height

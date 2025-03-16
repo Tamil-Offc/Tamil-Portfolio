@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
-import { Link } from "react-scroll"; // Ensure you have react-scroll installed
+import { Link } from "react-scroll";
 
 function Footer() {
   return (
@@ -10,27 +10,30 @@ function Footer() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
     >
-      <div className="container mx-auto flex flex-col items-center">
-        {/* Logo / Name with Smooth Side-to-Side Hover Effect */}
+      <div className="container mx-auto flex flex-col items-center text-center">
+        {/* Logo / Name */}
         <motion.h2
           className="text-3xl font-bold text-blue-400"
           whileHover={{
             scale: 1.1,
             textShadow: "0px 0px 8px rgb(0, 191, 255)",
-            x: [-5, 5], // Moves slightly left and right
+            x: [-5, 5],
             transition: { duration: 1.5, ease: "easeInOut", repeat: Infinity },
           }}
         >
           My Portfolio
         </motion.h2>
 
-        {/* Social Icons with Slow Floating Animation */}
+        {/* Social Icons */}
         <div className="flex gap-6 mt-4">
           {[
-            // { icon: <FaGithub />, link: "https://github.com/" },
-            { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/karthick-saravanan-37b025264/" },
-            // { icon: <FaTwitter />, link: "https://twitter.com/" },
-            { icon: <FaEnvelope />, link: "mailto:karthicksaravanan663@email.com" },
+            { icon: <FaGithub />, link: "https://github.com/" },
+            {
+              icon: <FaLinkedin />,
+              link: "https://www.linkedin.com/in/karthick-saravanan-37b025264/",
+            },
+            // { icon: <Fa />, link: "https://twitter.com/" },
+            { icon: <FaEnvelope />, link: "mailto:tamiloffc@gmail.com" },
           ].map((social, index) => (
             <motion.a
               key={index}
@@ -41,7 +44,7 @@ function Footer() {
               whileHover={{
                 scale: 1.2,
                 rotate: 10,
-                x: [0, 5, -5, 5, 0], // Slow floating side-to-side effect
+                x: [0, 5, -5, 5, 0],
                 transition: { duration: 1.5, ease: "easeInOut" },
               }}
             >
@@ -50,8 +53,8 @@ function Footer() {
           ))}
         </div>
 
-        {/* Footer Links with Slow Floating Effect */}
-        <motion.ul className="hidden md:flex gap-6 mt-6">
+        {/* Navigation Links */}
+        <motion.ul className="flex flex-wrap justify-center gap-6 mt-6 text-lg">
           {["About", "Skill", "Projects", "Services", "Contact"].map(
             (item, index) => (
               <motion.li
@@ -60,7 +63,7 @@ function Footer() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 whileHover={{
-                  y: [-5, 5, -5, 0], // Moves up and down slowly on hover
+                  y: [-5, 5, -5, 0],
                   transition: { duration: 1.5, ease: "easeInOut" },
                 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -69,7 +72,7 @@ function Footer() {
                   to={item.toLowerCase()}
                   smooth={true}
                   duration={600}
-                  offset={-50} // Adjust offset for better alignment
+                  offset={-50}
                   className="cursor-pointer"
                 >
                   {item}
@@ -79,19 +82,27 @@ function Footer() {
           )}
         </motion.ul>
 
+        {/* Divider Line */}
+        <motion.div
+          className="w-3/4 h-0.5 bg-gray-600 my-6"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1 }}
+        />
+
         {/* Copyright */}
         <motion.p
-          className="mt-6 text-gray-400 text-sm"
+          className="mt-4 text-gray-400 text-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           whileHover={{
             scale: 1.05,
-            x: [-3, 3, -3, 0], // Moves slightly side to side on hover
+            x: [-3, 3, -3, 0],
             transition: { duration: 1.5, ease: "easeInOut" },
           }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          &copy; {new Date().getFullYear()} My Portfolio. All rights reserved.
+          &copy; {new Date().getFullYear()} Tamil-Portfolio. All rights reserved.
         </motion.p>
       </div>
     </motion.footer>

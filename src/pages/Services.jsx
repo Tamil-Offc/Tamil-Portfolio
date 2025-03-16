@@ -1,9 +1,15 @@
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
-import { FaDatabase, FaCode, FaBug, FaTools } from "react-icons/fa";
+import { FaDatabase, FaCode, FaBug, FaTools, FaLaptopCode } from "react-icons/fa";
 import { FaProjectDiagram } from "react-icons/fa";
 
 const services = [
+  {
+    title: "Frontend Development",
+    description:
+      "Building modern and responsive frontend applications using Vite, React Native (Expo Go), Tailwind CSS, MUI, and Bootstrap. \n- Implementing reusable and scalable UI components. \n- Ensuring accessibility, performance, and mobile-first design principles. \n- Creating smooth animations and interactive UI with Framer Motion.",
+    icon: <FaLaptopCode className="text-blue-500 text-5xl" />,
+  },
   {
     title: "System Design",
     description:
@@ -22,12 +28,13 @@ const services = [
       "Identifying, analyzing, and solving complex problems to optimize business processes. \n- Debugging and troubleshooting production issues. \n- Enhancing system performance and reliability.",
     icon: <FaBug className="text-yellow-500 text-5xl" />,
   },
-  {
-    title: "Jenkins CI/CD & Docker",
-    description:
-      "Implementing CI/CD pipelines with Jenkins and containerizing applications with Docker. \n- Automating deployment workflows. \n- Managing containerized environments for scalability.",
-    icon: <FaTools className="text-red-500 text-5xl" />,
-  },
+  // {
+  //   title: "Jenkins CI/CD & Docker",
+  //   description:
+  //     "Implementing CI/CD pipelines with Jenkins and containerizing applications with Docker. \n- Automating deployment workflows. \n- Managing containerized environments for scalability.",
+  //   icon: <FaTools className="text-red-500 text-5xl" />,
+  // },
+  
 ];
 
 const cardVariants = {
@@ -41,8 +48,7 @@ const Services = () => {
       <div className="container mx-auto text-center mb-12">
         <h1 className="text-5xl font-bold mb-4">Services</h1>
         <p className="text-gray-400 max-w-2xl mx-auto">
-          Offering top-tier skills in database design, backend development,
-          problem-solving, and DevOps automation.
+          Offering top-tier skills in frontend and backend development, system design, problem-solving, and DevOps automation.
         </p>
       </div>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4">
