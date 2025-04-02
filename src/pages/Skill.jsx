@@ -97,8 +97,8 @@ function Skill() {
           My Skill Set
         </h2>
         <p className="text-base text-gray-300 mb-6">
-          As a frontend developer skilled in <span className="text-blue-400">React, MUI, Bootstrap, and Expo CLI</span>,  
-          I also specialize in backend technologies like <span className="text-blue-400">Java, Spring Boot, and DevOps</span>,  
+          As a frontend developer skilled in <span className="text-blue-400">React, MUI, Bootstrap, and Expo Go</span>,  
+          I also specialize in backend technologies like <span className="text-blue-400">Java, Spring Boot </span>   
           enabling me to build robust and scalable applications.
         </p>
 

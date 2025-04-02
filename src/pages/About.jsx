@@ -20,8 +20,7 @@ function About() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 1.5 }}
         >
-          A <span className="text-blue-400">22-year-old</span> Backend Developer
-          and DevOps Engineer with <span className="text-blue-400">1 Year</span> of Experience.
+          A <span className="text-blue-400">22-year-old</span> Frontend developer with <span className="text-blue-400">8 Month</span> of Experience.
         </motion.p>
       </div>
 
@@ -62,16 +61,16 @@ function About() {
           <h2 className="text-3xl sm:text-4xl font-bold text-blue-400 mb-6">About Me</h2>
           <div className="space-y-6">
             <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-              I am a <span className="text-blue-400 font-semibold">Full-Stack Developer</span> with <span className="text-blue-400">1 year</span> of experience in building <span className="text-blue-400">responsive web and mobile applications</span>. I specialize in <span className="text-blue-400">React, MUI, Bootstrap, and Expo CLI</span> for frontend development and <span className="text-blue-400">Java, Spring Boot, Hibernate, and Strapi</span> for backend development.
+              I am a <span className="text-blue-400 font-semibold">Frontend Developer</span> with <span className="text-blue-400">8 Month</span> of experience in building <span className="text-blue-400">responsive web and mobile applications</span>. I specialize in <span className="text-blue-400">React, MUI, Bootstrap, and Expo Go</span> for frontend development and <span className="text-blue-400">Java, Spring Boot, and Strapi</span> for backend development.
             </p>
 
             {/* Leadership & Mentorship */}
-            <div>
+            {/* <div>
               <h3 className="text-xl sm:text-2xl font-semibold text-blue-400 mb-2">Leadership & Mentorship</h3>
               <p className="text-gray-300 text-base sm:text-lg">
                 I have been a <span className="text-blue-400">Team Leader</span> and <span className="text-blue-400">React Mentor</span> for over a year, mentoring developers and helping them improve their skills.
               </p>
-            </div>
+            </div> */}
 
             {/* Problem-Solving & Competitive Programming */}
             <div>
@@ -81,14 +80,14 @@ function About() {
               </p>
             </div>
 
-            {/* DevOps & Cloud Technologies */}
-            <div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-blue-400 mb-2">DevOps & Cloud Technologies</h3>
-              <ul className="text-gray-300 text-base sm:text-lg space-y-1 pl-5 list-disc">
-                <li>Docker, Kubernetes, Jenkins for CI/CD and containerization</li>
-                <li>Linux & AWS for cloud infrastructure management</li>
-              </ul>
-            </div>
+           {/* Frontend & Backend Technologies */}
+<div>
+  <h3 className="text-xl sm:text-2xl font-semibold text-blue-400 mb-2">Full Stack Development</h3>
+  <ul className="text-gray-300 text-base sm:text-lg space-y-1 pl-5 list-disc">
+    <li><strong>Frontend:</strong> React, MUI, Bootstrap, Expo Go,  Tailwind CSS, Framer Motion</li>
+    <li><strong>Backend:</strong > java, Springboot,  Mysql, REST APIs</li>
+  </ul>
+</div>
           </div>
         </motion.div>
       </div>

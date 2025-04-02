@@ -1,109 +1,184 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 import { Link } from "react-scroll";
 
 function Footer() {
+  const socialLinks = [
+    { 
+      icon: <FaGithub />, 
+      link: "https://github.com/Tamil-Offc/Tamil-Portfolio",
+      color: "hover:text-gray-300",
+      tooltip: "GitHub"
+    },
+    {
+      icon: <FaLinkedin />,
+      link: "https://www.linkedin.com/in/tamil-arasan-091539325/",
+      color: "hover:text-blue-500",
+      tooltip: "LinkedIn"
+    },
+    { 
+      icon: <FaEnvelope />, 
+      link: "mailto:tamiloffc@gmail.com",
+      color: "hover:text-red-400",
+      tooltip: "Email"
+    }
+  ];
+
+  const navItems = ["About", "Skill", "Projects", "Services", "Contact"];
+
+  // Animation variants
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const hoverEffect = {
+    scale: 1.05,
+    transition: { duration: 0.2 }
+  };
+
+  const socialHover = {
+    scale: [1, 1.2, 1.2, 1.2, 1],
+    rotate: [0, 10, -10, 10, 0],
+    transition: { duration: 0.8 }
+  };
+
   return (
     <motion.footer
-      className="bg-black text-white py-10 px-6 md:px-20"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
+      className="bg-black text-white py-12 px-4 sm:px-6 lg:px-20 border-t border-gray-800"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
     >
-      <div className="container mx-auto flex flex-col items-center text-center">
+      <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
         {/* Logo / Name */}
-        <motion.h2
-          className="text-3xl font-bold text-blue-400"
+        <motion.div
+          className="mb-6"
           whileHover={{
-            scale: 1.1,
-            textShadow: "0px 0px 8px rgb(0, 191, 255)",
-            x: [-5, 5],
-            transition: { duration: 1.5, ease: "easeInOut", repeat: Infinity },
+            scale: 1.05,
+            transition: { duration: 0.3 }
           }}
         >
-          My Portfolio
-        </motion.h2>
+          <Link 
+            to="home" 
+            smooth={true} 
+            duration={600}
+            className="text-3xl sm:text-4xl font-bold text-blue-400 cursor-pointer"
+          >
+            Tamil Portfolio
+          </Link>
+        </motion.div>
 
         {/* Social Icons */}
-        <div className="flex gap-6 mt-4">
-          {[
-            { icon: <FaGithub />, link: "https://github.com/" },
-            {
-              icon: <FaLinkedin />,
-              link: "https://www.linkedin.com/in/karthick-saravanan-37b025264/",
-            },
-            // { icon: <Fa />, link: "https://twitter.com/" },
-            { icon: <FaEnvelope />, link: "mailto:tamiloffc@gmail.com" },
-          ].map((social, index) => (
-            <motion.a
+        <motion.div 
+          className="flex gap-6 mb-6"
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {socialLinks.map((social, index) => (
+            <motion.div
               key={index}
-              href={social.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-2xl text-white hover:text-blue-400 transition duration-300"
-              whileHover={{
-                scale: 1.2,
-                rotate: 10,
-                x: [0, 5, -5, 5, 0],
-                transition: { duration: 1.5, ease: "easeInOut" },
-              }}
+              className="relative group"
+              variants={item}
+              whileHover="hover"
             >
-              {social.icon}
-            </motion.a>
+              <motion.a
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`text-2xl text-gray-400 ${social.color} transition-colors duration-300`}
+                whileHover={socialHover}
+                whileTap={{ scale: 0.9 }}
+                aria-label={social.tooltip}
+              >
+                {social.icon}
+              </motion.a>
+              <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs bg-gray-800 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                {social.tooltip}
+              </span>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Navigation Links */}
-        <motion.ul className="flex flex-wrap justify-center gap-6 mt-6 text-lg">
-          {["About", "Skill", "Projects", "Services", "Contact"].map(
-            (item, index) => (
+        <motion.nav
+          className="mb-8"
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.ul className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-base">
+            {navItems.map((item, index) => (
               <motion.li
                 key={index}
-                className="hover:text-blue-400 cursor-pointer"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
+                variants={item}
                 whileHover={{
-                  y: [-5, 5, -5, 0],
-                  transition: { duration: 1.5, ease: "easeInOut" },
+                  y: -3,
+                  color: "#60a5fa",
+                  transition: { duration: 0.2 }
                 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
               >
                 <Link
                   to={item.toLowerCase()}
                   smooth={true}
                   duration={600}
-                  offset={-50}
-                  className="cursor-pointer"
+                  offset={-80}
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-300 cursor-pointer px-2 py-1"
+                  activeClass="text-blue-400 font-medium"
+                  spy={true}
                 >
                   {item}
                 </Link>
               </motion.li>
-            )
-          )}
-        </motion.ul>
+            ))}
+          </motion.ul>
+        </motion.nav>
 
         {/* Divider Line */}
         <motion.div
-          className="w-3/4 h-0.5 bg-gray-600 my-6"
+          className="w-full max-w-md h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent my-4"
           initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 1 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         />
 
         {/* Copyright */}
-        <motion.p
-          className="mt-4 text-gray-400 text-sm"
+        <motion.div
+          className="mt-4"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          whileHover={{
-            scale: 1.05,
-            x: [-3, 3, -3, 0],
-            transition: { duration: 1.5, ease: "easeInOut" },
-          }}
-          transition={{ duration: 1, delay: 0.5 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
         >
-          &copy; {new Date().getFullYear()} Tamil-Portfolio. All rights reserved.
-        </motion.p>
+          <p className="text-gray-500 text-xs sm:text-sm">
+            &copy; {new Date().getFullYear()} Tamilarasan Saravanan. All rights reserved.
+          </p>
+          <p className="text-gray-600 text-xs mt-1">
+            Crafted with React, Tailwind CSS, and Framer Motion
+          </p>
+        </motion.div>
       </div>
     </motion.footer>
   );
