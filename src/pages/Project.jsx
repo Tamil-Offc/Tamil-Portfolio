@@ -21,11 +21,11 @@ const projects = [
     description: "A static school management website built with Vite and Tailwind CSS, showcasing a modern UI for visual presentation .",
     img: "/Screenshot 2025-03-16 002554.png",
   },
-  {
-    title: " Nova  Clothing ",
-    description: "A complete hotel booking and management solution.",
-    img: "/Screenshot 2025-03-16 004214.png",
-  },
+  // {
+  //   title: " Nova  Clothing ",
+  //   description: "A complete hotel booking and management solution.",
+  //   img: "/Screenshot 2025-03-16 004214.png",
+  // },
   {
     title: "Queuing System",
     description: "An automated queuing system for efficient customer service.",
@@ -67,14 +67,14 @@ const projectDetails = {
     "Structured the project with reusable components for scalability."
   ]
 },
- "Nova Clothing": {
-  "technologies": ["HTML", "CSS", "JavaScript"],
-  "description": [
-    "Developed a static clothing store website using HTML, CSS, and JavaScript.",
-    "Designed a visually appealing and responsive layout for showcasing products.",
-    "Implemented interactive elements for an engaging user experience."
-  ]
-},
+//  "Nova Clothing": {
+//   "technologies": ["HTML", "CSS", "JavaScript"],
+//   "description": [
+//     "Developed a static clothing store website using HTML, CSS, and JavaScript.",
+//     "Designed a visually appealing and responsive layout for showcasing products.",
+//     "Implemented interactive elements for an engaging user experience."
+//   ]
+// },
 
   "Queuing System": {
   "technologies": ["Java", "Spring Boot", "Hibernate", "React Native", "Expo Go"],

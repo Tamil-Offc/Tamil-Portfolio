@@ -15,27 +15,21 @@ import {
   FaCloud,
   FaCogs,
 } from "react-icons/fa";
+import { Cog6ToothIcon } from "@heroicons/react/24/solid";
 import Tilt from "react-parallax-tilt";
-import { SiVite } from "react-icons/si";
+import { SiVite, SiTailwindcss, SiMui } from "react-icons/si";
 import { SiStrapi } from "react-icons/si";
 import { SiExpo } from "react-icons/si";
-
 import { Tooltip } from "react-tooltip";
 
 const skills = [
   {
-    name: "React",
-    icon: <FaReact className="text-blue-400 text-3xl" />,
+    name: "Vite ( React )",
+    icon: <SiVite className="text-green-400 text-3xl" />,
     percentage: 90,
-    tooltip: ["Axios - API Calls", "useEffect Hook", "Props Handling"],
   },
-  // {
-  //   name: "Vite",
-  //   icon: <SiVite className="text-green-400 text-3xl" />,
-  //   percentage: 90,
-  // },
   {
-    name: "Expo CLI",
+    name: "Expo go",
     icon: <SiExpo className=" text-3xl" />,
     percentage: 80,
   },
@@ -45,7 +39,6 @@ const skills = [
     percentage: 75,
   },
   {
-
     name: "Git & GitHub",
     icon: <FaGitAlt className="text-red-500 text-3xl" />,
     percentage: 75,
@@ -63,17 +56,7 @@ const skills = [
     ],
   },
   {
-    name: "Hibernate",
-    icon: <FaCogs className="text-green-600 text-3xl" />,
-    percentage: 70,
-    tooltip: [
-      "ORM Framework",
-      "Entity Relationships",
-      "Caching & Performance Optimization",
-    ],
-  },
-  {
-    name: "MySQL & MongoDB",
+    name: "MySQL ",
     icon: <FaDatabase className="text-yellow-600 text-3xl" />,
     percentage: 75,
     tooltip: [
@@ -81,48 +64,6 @@ const skills = [
       "Joins & Relationships",
       "Query Optimization",
     ],
-  },
-  {
-    name: "Docker",
-    icon: <FaDocker className="text-blue-400 text-3xl" />,
-    percentage: 60,
-    tooltip: ["Containerization", "Multi-Stage Builds", "Docker Compose"],
-  },
-  {
-    name: "Jenkins",
-    icon: <FaJenkins className="text-red-400 text-3xl" />,
-    percentage: 50,
-    tooltip: ["CI/CD Pipelines", "Automated Builds & Deployments"],
-  },
-  {
-    name: "Linux",
-    icon: <FaLinux className="text-gray-400 text-3xl" />,
-    percentage: 70,
-    tooltip: ["Ubuntu & Debian", "Shell Scripting", "Server Management"],
-  },
-  {
-    name: "Kubernetes",
-    icon: <FaCloud className="text-blue-500 text-3xl" />,
-    percentage: 30,
-    tooltip: ["Container Orchestration", "Service Discovery"],
-  },
-  {
-    name: "AWS",
-    icon: <FaAws className="text-orange-500 text-3xl" />,
-    percentage: 50,
-    tooltip: ["EC2 Instance Management", "RDS Database Usage"],
-  },
-  {
-    name: "Kafka",
-    icon: <FaCogs className="text-purple-500 text-3xl" />,
-    percentage: 50,
-    tooltip: ["Event-Driven Architecture", "Messaging & Streaming"],
-  },
-  {
-    name: "Rule & Drools",
-    icon: <FaCogs className="text-pink-500 text-3xl" />,
-    percentage: 50,
-    tooltip: ["When-Then Logic", "Business Rule Processing"],
   },
   {
     name: "Algorithms",
@@ -134,6 +75,18 @@ const skills = [
       "Optimized Data Structures",
     ],
   },
+  {
+    name: "Tailwind CSS",
+    icon: <SiTailwindcss className="text-cyan-400 text-3xl" />,
+    percentage: 50,
+    tooltip: ["Utility-first CSS", "Responsive Design", "Custom Configurations"],
+  },
+  {
+    name: "Material UI",
+    icon: <SiMui className="text-blue-500 text-3xl" />,
+    percentage: 60,
+    tooltip: ["Component Library", "Theming", "Custom Components"],
+  },
 ];
 
 function Skill() {
@@ -144,10 +97,10 @@ function Skill() {
           My Skill Set
         </h2>
         <p className="text-base text-gray-300 mb-6">
-  As a frontend developer skilled in <span className="text-blue-400">React, MUI, Bootstrap, and Expo CLI</span>,  
-  I also specialize in backend technologies like <span className="text-blue-400">Java, Spring Boot, and DevOps</span>,  
-  enabling me to build robust and scalable applications.
-</p>
+          As a frontend developer skilled in <span className="text-blue-400">React, MUI, Bootstrap, and Expo CLI</span>,  
+          I also specialize in backend technologies like <span className="text-blue-400">Java, Spring Boot, and DevOps</span>,  
+          enabling me to build robust and scalable applications.
+        </p>
 
         <div className="flex flex-wrap justify-center gap-3">
           {skills.map((skill, index) => (

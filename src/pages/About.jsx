@@ -4,7 +4,7 @@ import profileImage from "../assets/image.png";
 
 function About() {
   return (
-    <section id="about" className="bg-black text-white py-16 px-6 md:px-16 lg:px-24">
+    <section id="about" className="bg-black text-white py-16 px-4 sm:px-6 md:px-12 lg:px-24">
       <div className="text-center mb-12">
         <motion.h1
           className="text-4xl sm:text-5xl font-bold text-blue-400"
@@ -25,62 +25,71 @@ function About() {
         </motion.p>
       </div>
 
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-6">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 xl:gap-16">
         {/* Profile Image Section */}
-        <Tilt
-          tiltMaxAngleX={15}
-          tiltMaxAngleY={15}
-          glareEnable={true}
-          glareMaxOpacity={0.3}
-          scale={1.05}
-          className="flex justify-center"
+        <motion.div 
+          className="flex-shrink-0"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          <motion.img
-            src={profileImage}
-            alt="Profile"
-            className="w-48 h-48 sm:w-56 sm:h-56 lg:w-75 lg:h-72 rounded-full shadow-lg border-4 border-blue-400 object-cover md:mr-6"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 3 }}
-          />
-        </Tilt>
+          <Tilt
+            tiltMaxAngleX={10}
+            tiltMaxAngleY={10}
+            glareEnable={true}
+            glareMaxOpacity={0.2}
+            glarePosition="all"
+            glareBorderRadius="50%"
+            scale={1.05}
+            transitionSpeed={2000}
+            className="rounded-full"
+          >
+            <img
+              src={profileImage}
+              alt="Profile"
+              className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full shadow-xl border-4 border-blue-400 object-cover"
+            />
+          </Tilt>
+        </motion.div>
 
         {/* About Content Section */}
         <motion.div
-          className="max-w-3xl text-center lg:text-left px-4"
+          className="max-w-2xl lg:max-w-3xl text-center lg:text-left"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 3 }}
+          transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-blue-400 mb-4">About Me</h2>
-          <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-            I am a <span className="text-blue-400 font-semibold">Full-Stack Developer </span>
-            with <span className="text-blue-400">1 year</span> of experience in building
-            <span className="text-blue-400"> responsive web and mobile applications</span>.
-            I specialize in <span className="text-blue-400">React, MUI, Bootstrap, and Expo CLI </span>
-            for frontend development and <span className="text-blue-400">Java, Spring Boot, Hibernate, and Strapi</span> for backend development.
-          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-blue-400 mb-6">About Me</h2>
+          <div className="space-y-6">
+            <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
+              I am a <span className="text-blue-400 font-semibold">Full-Stack Developer</span> with <span className="text-blue-400">1 year</span> of experience in building <span className="text-blue-400">responsive web and mobile applications</span>. I specialize in <span className="text-blue-400">React, MUI, Bootstrap, and Expo CLI</span> for frontend development and <span className="text-blue-400">Java, Spring Boot, Hibernate, and Strapi</span> for backend development.
+            </p>
 
-          {/* Leadership & Mentorship */}
-          <h3 className="text-xl sm:text-2xl font-semibold text-blue-400 mt-6">Leadership & Mentorship</h3>
-          <p className="text-gray-300 text-base sm:text-lg">
-            I have been a <span className="text-blue-400">Team Leader</span> and
-            <span className="text-blue-400"> React Mentor</span> for over a year, mentoring developers and helping them improve their skills.
-          </p>
+            {/* Leadership & Mentorship */}
+            <div>
+              <h3 className="text-xl sm:text-2xl font-semibold text-blue-400 mb-2">Leadership & Mentorship</h3>
+              <p className="text-gray-300 text-base sm:text-lg">
+                I have been a <span className="text-blue-400">Team Leader</span> and <span className="text-blue-400">React Mentor</span> for over a year, mentoring developers and helping them improve their skills.
+              </p>
+            </div>
 
-          {/* Problem-Solving & Competitive Programming */}
-          <h3 className="text-xl sm:text-2xl font-semibold text-blue-400 mt-6">Problem-Solving & Competitive Programming</h3>
-          <p className="text-gray-300 text-base sm:text-lg">
-            I have solved <span className="text-blue-400">250+ W3Resource problems</span> in React,
-            enhancing my problem-solving skills and expertise in building dynamic and efficient web applications.
-          </p>
+            {/* Problem-Solving & Competitive Programming */}
+            <div>
+              <h3 className="text-xl sm:text-2xl font-semibold text-blue-400 mb-2">Problem-Solving & Competitive Programming</h3>
+              <p className="text-gray-300 text-base sm:text-lg">
+                I have solved <span className="text-blue-400">250+ W3Resource problems</span> in React, enhancing my problem-solving skills and expertise in building dynamic and efficient web applications.
+              </p>
+            </div>
 
-          {/* DevOps & Cloud Technologies */}
-          <h3 className="text-xl sm:text-2xl font-semibold text-blue-400 mt-6">DevOps & Cloud Technologies</h3>
-          <ul className="text-gray-300 text-base sm:text-lg list-disc list-inside">
-            <li>Docker, Kubernetes, Jenkins for CI/CD and containerization</li>
-            <li>Linux & AWS for cloud infrastructure management</li>
-          </ul>
+            {/* DevOps & Cloud Technologies */}
+            <div>
+              <h3 className="text-xl sm:text-2xl font-semibold text-blue-400 mb-2">DevOps & Cloud Technologies</h3>
+              <ul className="text-gray-300 text-base sm:text-lg space-y-1 pl-5 list-disc">
+                <li>Docker, Kubernetes, Jenkins for CI/CD and containerization</li>
+                <li>Linux & AWS for cloud infrastructure management</li>
+              </ul>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
